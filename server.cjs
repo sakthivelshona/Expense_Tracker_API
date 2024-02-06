@@ -14,7 +14,7 @@ function listen(){
     const port = process.env.port || 8000
     app.listen(port)
     db = getdb()
-    console.log(`Listening on port ${port}`)
+    console.log(`Listening on  ${port}`)
 }
 
 
