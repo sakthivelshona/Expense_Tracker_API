@@ -11,8 +11,10 @@ app.use(bodyparser.json())
 
 connecttodb(listen)
 function listen(){
-    app.listen(8000)
+    const port = process.env.port || 8000
+    app.listen(port)
     db = getdb()
+    console.log(`Listening on port ${port}`)
 }
 
 
@@ -44,7 +46,7 @@ app.post('/add',function(request,response){            //get user input - so usi
 app.get('/entry',function(request,response){
 
     const entry =[]
-    db.collection('tracker1').find().array.forEach(element => {
+    db.collection('tracker1').find().forEach(element => {
         entry.push(element);
     })  
     .then(function(){

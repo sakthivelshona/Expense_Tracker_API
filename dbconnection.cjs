@@ -9,7 +9,6 @@ function connecttodb(arg){
 
     .then(function(client){                        //so use .then , client = connection established
         dbconnection = client.db()                 //Get the dbs
-        console.log('Connected')
         arg()
     })
     .catch(function(err){
@@ -23,7 +22,6 @@ function connecttodb(arg){
 
 //get data from db
 function getdb(){
-    console.log('In connection')
     return dbconnection
 }
 
