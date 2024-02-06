@@ -51,13 +51,13 @@ app.get('/entry',function(request,response){
     })  
     .then(function(){
         response.status(200).json(entry)                //status code
-        
+    })
     .catch(function(){
         response.status(500).json({
             "status":"couldn't  fetch the entries"             //if there is an error in fetching 
         })
     })
-    })
+  
 })
 
 
